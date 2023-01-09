@@ -1,0 +1,81 @@
+body{
+    background-color: black;
+    padding: 0;
+    margin: 0;
+    height: 200vh;
+    width: 100%;
+    // overflow: hidden;
+}
+
+main{
+    display: flex;
+    .section{
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        top: 0;
+        left: 0;
+
+        display: grid;
+        place-items: center;
+
+        .content{
+            width: 70%;
+            height: 70%;
+            background-color: black;
+        }
+    }
+    .active{
+        z-index: 5;
+    }
+
+    section:nth-child(1){
+        background-color: rgb(182, 74, 7);
+        left: -100px;
+    }
+    section:nth-child(2){
+        background-color: rgb(80, 118, 3);
+    }
+    section:nth-child(3){
+        background-color: rgb(2, 30, 102);
+    }
+
+    .appear-left{
+        animation: appearLeft 1s ease-in-out forwards;
+    }
+    @keyframes appearLeft{
+        0%{
+            left: -100vw;
+            scale: 1.1;
+        }
+        45%{
+            scale: 1.1;
+        }
+        80%{
+            left: 0;
+        }
+        100%{
+            scale: 1;
+            left: 0;
+        }
+    }
+    .appear-right{
+        animation: appearRight 1s ease-in-out forwards;
+    }
+    @keyframes appearRight{
+        0%{
+            left: 100vw;
+            scale: 1.1;
+        }
+        45%{
+            scale: 1.1;
+        }
+        80%{
+            left: 0;
+        }
+        100%{
+            scale: 1;
+            left: 0;
+        }
+    }
+}

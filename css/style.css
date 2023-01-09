@@ -1,0 +1,110 @@
+body {
+  background-color: black;
+  padding: 0;
+  margin: 0;
+  height: 200vh;
+  width: 100%;
+}
+
+main {
+  display: flex;
+}
+main .section {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+}
+main .section .content {
+  width: 70%;
+  height: 70%;
+  background-color: black;
+}
+main .active {
+  z-index: 5;
+}
+main section:nth-child(1) {
+  background-color: rgb(182, 74, 7);
+  left: -100px;
+}
+main section:nth-child(2) {
+  background-color: rgb(80, 118, 3);
+}
+main section:nth-child(3) {
+  background-color: rgb(2, 30, 102);
+}
+main .appear-left {
+  -webkit-animation: appearLeft 1s ease-in-out forwards;
+          animation: appearLeft 1s ease-in-out forwards;
+}
+@-webkit-keyframes appearLeft {
+  0% {
+    left: -100vw;
+    scale: 1.1;
+  }
+  45% {
+    scale: 1.1;
+  }
+  80% {
+    left: 0;
+  }
+  100% {
+    scale: 1;
+    left: 0;
+  }
+}
+@keyframes appearLeft {
+  0% {
+    left: -100vw;
+    scale: 1.1;
+  }
+  45% {
+    scale: 1.1;
+  }
+  80% {
+    left: 0;
+  }
+  100% {
+    scale: 1;
+    left: 0;
+  }
+}
+main .appear-right {
+  -webkit-animation: appearRight 1s ease-in-out forwards;
+          animation: appearRight 1s ease-in-out forwards;
+}
+@-webkit-keyframes appearRight {
+  0% {
+    left: 100vw;
+    scale: 1.1;
+  }
+  45% {
+    scale: 1.1;
+  }
+  80% {
+    left: 0;
+  }
+  100% {
+    scale: 1;
+    left: 0;
+  }
+}
+@keyframes appearRight {
+  0% {
+    left: 100vw;
+    scale: 1.1;
+  }
+  45% {
+    scale: 1.1;
+  }
+  80% {
+    left: 0;
+  }
+  100% {
+    scale: 1;
+    left: 0;
+  }
+}/*# sourceMappingURL=style.css.map */
