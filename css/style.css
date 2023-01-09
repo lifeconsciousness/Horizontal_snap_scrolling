@@ -4,13 +4,14 @@ body {
   margin: 0;
   height: 200vh;
   width: 100%;
+  overflow-x: hidden;
 }
 
 main {
   display: flex;
 }
 main .section {
-  position: absolute;
+  position: fixed;
   height: 100vh;
   width: 100vw;
   top: 0;
@@ -24,11 +25,13 @@ main .section .content {
   background-color: black;
 }
 main .active {
-  z-index: 5;
+  z-index: 5 !important;
+}
+main .last-active {
+  z-index: 4 !important;
 }
 main section:nth-child(1) {
   background-color: rgb(182, 74, 7);
-  left: -100px;
 }
 main section:nth-child(2) {
   background-color: rgb(80, 118, 3);
@@ -106,5 +109,45 @@ main .appear-right {
   100% {
     scale: 1;
     left: 0;
+  }
+}
+main .disappear-left {
+  -webkit-animation: disappearLeft 1s ease-in-out forwards;
+          animation: disappearLeft 1s ease-in-out forwards;
+}
+@-webkit-keyframes disappearLeft {
+  0% {
+    left: 0;
+  }
+  80% {
+    left: -100vw;
+  }
+}
+@keyframes disappearLeft {
+  0% {
+    left: 0;
+  }
+  80% {
+    left: -100vw;
+  }
+}
+main .disappear-right {
+  -webkit-animation: disappearRight 1s ease-in-out forwards;
+          animation: disappearRight 1s ease-in-out forwards;
+}
+@-webkit-keyframes disappearRight {
+  0% {
+    left: 0;
+  }
+  80% {
+    left: 100vw;
+  }
+}
+@keyframes disappearRight {
+  0% {
+    left: 0;
+  }
+  80% {
+    left: 100vw;
   }
 }/*# sourceMappingURL=style.css.map */

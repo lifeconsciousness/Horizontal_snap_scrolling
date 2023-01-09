@@ -4,13 +4,13 @@ body{
     margin: 0;
     height: 200vh;
     width: 100%;
-    // overflow: hidden;
+    overflow-x: hidden;
 }
 
 main{
     display: flex;
     .section{
-        position: absolute;
+        position: fixed;
         height: 100vh;
         width: 100vw;
         top: 0;
@@ -26,18 +26,24 @@ main{
         }
     }
     .active{
-        z-index: 5;
+        z-index: 5 !important;
     }
+    .last-active{
+        z-index: 4 !important;
+    }
+
 
     section:nth-child(1){
         background-color: rgb(182, 74, 7);
-        left: -100px;
+        // z-index: 4;
     }
     section:nth-child(2){
         background-color: rgb(80, 118, 3);
+        // z-index: 3;
     }
     section:nth-child(3){
         background-color: rgb(2, 30, 102);
+        // z-index: 2;
     }
 
     .appear-left{
@@ -76,6 +82,34 @@ main{
         100%{
             scale: 1;
             left: 0;
+        }
+    }
+
+
+
+
+
+
+    .disappear-left{
+        animation: disappearLeft 1s ease-in-out forwards;
+    }
+    @keyframes disappearLeft{
+        0%{
+            left: 0;
+        }
+        80%{
+            left: -100vw;
+        }
+    }
+    .disappear-right{
+        animation: disappearRight 1s ease-in-out forwards;
+    }
+    @keyframes disappearRight{
+        0%{
+            left: 0;
+        }
+        80%{
+            left: 100vw;
         }
     }
 }
